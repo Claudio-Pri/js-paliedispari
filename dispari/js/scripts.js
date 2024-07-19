@@ -4,16 +4,21 @@
 //===== Code ======
 // l'utente sceglie pari o dispari
 let userChoice = prompt('Pari o dispari?');
+let compChoiche;
 // console.log('user choice', userChoice);
 // vorrei aggiungere solo 2 scelte magari con button
 // per ora controllo se la stringa corrisponde a pari o dispari
 if (userChoice == 'pari') {
     userChoice = 'pari';
-    console.log('hai scelto pari')
+    compChoiche = 'dispari';
+    console.log('hai scelto pari');
+    console.log('PC: ', compChoiche);
 }
 else if (userChoice == 'dispari') {
     userChoice = 'dispari';
+    compChoiche = 'pari'
     console.log('hai scelto dispari');
+    console.log('PC: ', compChoiche);
 }
 else {
     alert('scl');
@@ -31,18 +36,27 @@ else {
     else {
         console.log('il tuo numero è: ', userNumber);
     }
-
-
 };
 // console.log(userNumber);
 //Genero un numero per il computer
 let compNumber = 0;
 compNumber = randomNumber();
 console.log('compNumber', compNumber);
+// sommo i due numeri
+let finalSum = sum(userNumber, compNumber);
+console.log('totale:', finalSum);
+
+
 
 //===== Functions =====
 //funzione per generare il numero random
 function randomNumber() {
     return Math.floor(Math.random() * (5 - 1 + 1)) + 1;
 };
+//funzione somma
+function sum(x, y) {
+    const res = x + y;
+    return res;
+}
+
 
