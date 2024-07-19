@@ -42,12 +42,29 @@ else {
 let compNumber = 0;
 compNumber = randomNumber();
 console.log('compNumber', compNumber);
-// sommo i due numeri
+//sommo i due numeri
 let finalSum = sum(userNumber, compNumber);
 console.log('totale:', finalSum);
-
-
-
+let finalScore;
+//stabilisco se il totale è pari o dispari
+if (isEven(finalSum)) {
+    console.log('Il risultato è Pari!')
+    finalScore = 'pari';
+}
+else {
+    console.log('Il risultato è Dispari!')
+    finalScore = 'dispari';
+}
+//dichiaro il vicitore
+if (userChoice == 'pari' && finalScore == 'pari') {
+    alert('Hai vinto!');
+}
+else if (userChoice == 'dispari' && finalScore == 'dispari') {
+    alert('Hai vinto!');
+}
+else {
+    alert('Hai perso :( ');
+}
 //===== Functions =====
 //funzione per generare il numero random
 function randomNumber() {
@@ -58,5 +75,13 @@ function sum(x, y) {
     const res = x + y;
     return res;
 }
+//funzione verifi capari o dispari
+function isEven(num) {
+    if (num % 2 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
 
-
+}
